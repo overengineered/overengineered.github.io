@@ -1,0 +1,53 @@
+<?xml-stylesheet type="text/xsl" href="https://overengineereed.thoughts.lt/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://overengineereed.thoughts.lt/about/</loc>
+    <lastmod>2019-08-22T16:38:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://overengineereed.thoughts.lt/page/</loc>
+    <lastmod>2019-08-22T16:38:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://overengineereed.thoughts.lt/</loc>
+    <lastmod>2019-08-22T16:38:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://overengineereed.thoughts.lt/post/</loc>
+    <lastmod>2019-03-28T12:29:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://overengineereed.thoughts.lt/vscode-current-file-tests/</loc>
+    <lastmod>2019-03-28T12:29:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://overengineereed.thoughts.lt/testing-imports/</loc>
+    <lastmod>2019-02-28T16:12:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://overengineereed.thoughts.lt/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://overengineereed.thoughts.lt/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
