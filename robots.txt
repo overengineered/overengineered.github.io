@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://overengineereed.thoughts.lt/sitemap.xml
+Sitemap: https://overengineered.thoughts.lt/sitemap.xml

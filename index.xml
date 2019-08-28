@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>overengineered</title>
-    <link>https://overengineereed.thoughts.lt/</link>
+    <link>https://overengineered.thoughts.lt/</link>
     <description>Recent content on overengineered</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 22 Aug 2019 16:38:52 +0800</lastBuildDate>
     
-        <atom:link href="https://overengineereed.thoughts.lt/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://overengineered.thoughts.lt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://overengineereed.thoughts.lt/about/</link>
+      <link>https://overengineered.thoughts.lt/about/</link>
       <pubDate>Thu, 22 Aug 2019 16:38:52 +0800</pubDate>
       
-      <guid>https://overengineereed.thoughts.lt/about/</guid>
+      <guid>https://overengineered.thoughts.lt/about/</guid>
       
-        <description>&lt;p&gt;&lt;img src=&#34;https://overengineereed.thoughts.lt/../profile-pic.jpg&#34; alt=&#34;Photo of blog author&#34; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&#34;https://overengineered.thoughts.lt/../profile-pic.jpg&#34; alt=&#34;Photo of blog author&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A blog by Juozas Kontvainis who lives and works in Vilnius.&lt;/p&gt;
 
@@ -44,14 +44,14 @@ Served by &lt;a href=&#34;https://help.github.com/en/articles/what-is-github-pag
     
     <item>
       <title>Run tests for current file in VS Code</title>
-      <link>https://overengineereed.thoughts.lt/vscode-current-file-tests/</link>
+      <link>https://overengineered.thoughts.lt/vscode-current-file-tests/</link>
       <pubDate>Thu, 28 Mar 2019 12:29:27 +0000</pubDate>
       
-      <guid>https://overengineereed.thoughts.lt/vscode-current-file-tests/</guid>
+      <guid>https://overengineered.thoughts.lt/vscode-current-file-tests/</guid>
       
         <description>&lt;p&gt;In my project we keep files and their tests next to each other.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://overengineereed.thoughts.lt/../test-files.png&#34; alt=&#34;hashing.js and hashing.spec.js&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://overengineered.thoughts.lt/../test-files.png&#34; alt=&#34;hashing.js and hashing.spec.js&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I wanted a quick way to run tests for currently open file regardless which one
 of the pair is opened. I accomplished this by adding &lt;code&gt;tasks.json&lt;/code&gt; to my project.&lt;/p&gt;
@@ -134,10 +134,10 @@ or &lt;code&gt;hashing.spec.js&lt;/code&gt; is opened.&lt;/p&gt;</description>
     
     <item>
       <title>Asserting on module imports with Jest</title>
-      <link>https://overengineereed.thoughts.lt/testing-imports/</link>
+      <link>https://overengineered.thoughts.lt/testing-imports/</link>
       <pubDate>Thu, 28 Feb 2019 16:12:35 +0000</pubDate>
       
-      <guid>https://overengineereed.thoughts.lt/testing-imports/</guid>
+      <guid>https://overengineered.thoughts.lt/testing-imports/</guid>
       
         <description>&lt;p&gt;I work on React Native app and it&amp;rsquo;s important to do as little as possible
 at app start to reduce the time user has to wait before he can interact
