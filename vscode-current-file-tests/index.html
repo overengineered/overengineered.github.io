@@ -106,6 +106,18 @@ of the pair is opened. I accomplished this by adding tasks.json to my project."/
 <![endif]-->
 
 
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-46396173-2', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 
 
 <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:500&display=swap" rel="stylesheet">
@@ -398,6 +410,17 @@ or <code>hashing.spec.js</code> is opened.</p>
   
 
   
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "blog"
+            issue-term="pathname"
+            label="blog-comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
   
 
   
