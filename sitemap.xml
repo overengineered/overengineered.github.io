@@ -9,20 +9,15 @@
   </url>
   
   <url>
-    <loc>https://overengineered.thoughts.lt/page/</loc>
-    <lastmod>2019-08-22T16:38:52+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://overengineered.thoughts.lt/react-native-integration-tests/</loc>
+    <lastmod>2019-08-30T14:12:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://overengineered.thoughts.lt/</loc>
-    <lastmod>2019-08-22T16:38:52+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://overengineered.thoughts.lt/post/</loc>
-    <lastmod>2019-03-28T12:29:27+00:00</lastmod>
+    <lastmod>2019-08-30T14:12:35+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -38,16 +33,6 @@
     <lastmod>2019-02-28T16:12:35+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://overengineered.thoughts.lt/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://overengineered.thoughts.lt/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
