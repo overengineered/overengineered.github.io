@@ -84,7 +84,7 @@ integration tests for React Native project.">
 
 <meta itemprop="datePublished" content="2019-08-30T14:12:35&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-30T14:12:35&#43;00:00" />
-<meta itemprop="wordCount" content="708">
+<meta itemprop="wordCount" content="735">
 
 
 
@@ -254,8 +254,9 @@ makes your test code more readable and requires less changes when product change
 <p>React Native components sometimes require platform-specific counterparts to function
 correctly. Since our tests run in Node, instantiating those is tricky. The solution is to
 replace these components in tests with ones that feature just enough behavior to allow
-testing. For our tests we’ll need to mock TouchableOpacity and Switch components. We’ll
-add the jest setup file.</p>
+testing. For our example test we&rsquo;ll need to mock TouchableOpacity and Switch components.
+We need to tell jest where to look for mocks setup file. This way mocked versions of
+components are available in each test suite.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-JSON" data-lang="JSON"><span class="lnt">1
@@ -274,8 +275,9 @@ add the jest setup file.</p>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>We also need to configure mocks for TouchableOpacity and Switch in the setup file. This
-way mocked versions are available in each test suite.</p>
+<p>This setup file just sets up mocks for the components that are used in example app. It&rsquo;s a
+good place to also setup async-storage mocking and other mocks you might commonly need for
+tests.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt"> 1
@@ -407,8 +409,6 @@ to toggle a checkbox and to press a submit button.</p>
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// __tests__/App-test.js
@@ -417,36 +417,33 @@ to toggle a checkbox and to press a submit button.</p>
 <span class="k">import</span> <span class="p">{</span><span class="nx">componentDriver</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-component-driver&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">Example</span> <span class="nx">from</span> <span class="s1">&#39;../App&#39;</span><span class="p">;</span>
 
-<span class="k">const</span> <span class="nx">getExampleDriver</span> <span class="o">=</span> <span class="nx">componentDriver</span><span class="p">(</span><span class="nx">Example</span><span class="p">,</span> <span class="p">{</span>
- <span class="nx">toggleAwesome</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">const</span> <span class="p">{</span><span class="nx">props</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getByID</span><span class="p">(</span><span class="s1">&#39;awesome&#39;</span><span class="p">);</span>
-   <span class="nx">act</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">onValueChange</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
-   <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
- <span class="p">},</span>
- <span class="nx">pressSend</span><span class="p">()</span> <span class="p">{</span>
-   <span class="k">const</span> <span class="p">{</span><span class="nx">props</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getByID</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">);</span>
-   <span class="nx">act</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">onPress</span><span class="p">());</span>
-   <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
- <span class="p">},</span>
- <span class="nx">isAwesome</span><span class="p">()</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">getByID</span><span class="p">(</span><span class="s1">&#39;awesome&#39;</span><span class="p">).</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
- <span class="p">},</span>
+<span class="k">const</span> <span class="nx">getExampleDriver</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">componentDriver</span><span class="p">(</span><span class="nx">Example</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">toggleAwesome</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">getByID</span><span class="p">(</span><span class="s1">&#39;awesome&#39;</span><span class="p">).</span><span class="nx">props</span><span class="p">.</span><span class="nx">onValueChange</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="nx">pressSend</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">getByID</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">).</span><span class="nx">props</span><span class="p">.</span><span class="nx">onPress</span><span class="p">();</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="nx">isAwesome</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">getByID</span><span class="p">(</span><span class="s1">&#39;awesome&#39;</span><span class="p">).</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="p">},</span>
 <span class="p">});</span>
 
 <span class="nx">test</span><span class="p">(</span><span class="s1">&#39;using Example screen driver&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
- <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>
- <span class="k">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">getExampleDriver</span><span class="p">()</span>
-   <span class="p">.</span><span class="nx">toggleAwesome</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-   <span class="p">.</span><span class="nx">pressSend</span><span class="p">();</span>
- <span class="nx">expect</span><span class="p">(</span><span class="nx">driver</span><span class="p">.</span><span class="nx">isAwesome</span><span class="p">()).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
- <span class="nx">expect</span><span class="p">(</span><span class="nx">fetch</span><span class="p">).</span><span class="nx">toHaveBeenCalledTimes</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>
+  <span class="k">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">getExampleDriver</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">toggleAwesome</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pressSend</span><span class="p">();</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">driver</span><span class="p">.</span><span class="nx">isAwesome</span><span class="p">()).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">fetch</span><span class="p">).</span><span class="nx">toHaveBeenCalledTimes</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div>
-<p>Notice how using the driver allows us to focusmakes the test case code focused on what
-actions are being performed, while the details of how they are performed are delegated to
-the driver.</p>
+<p>Notice how using the driver allows us to focus on what actions are being performed, while
+the details of how they are performed are delegated to the driver.</p>
 
 <p>Finally, two more tips for writing better integration tests:</p>
 
@@ -465,6 +462,8 @@ made. This will give you the freedom to refactor with confidence.</p></li>
 
 <p>The source code for this article is available
 <a href="https://github.com/overengineered/blog/tree/samples/DriverTesting">here</a>.</p>
+
+<p>Thanks to Morad Stern, Roman Kolgushev, Guy Manzuruola, and Ran Greenberg for reviews and suggestions.</p>
 <div class="footnotes">
 
 <hr />
